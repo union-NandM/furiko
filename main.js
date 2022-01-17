@@ -105,10 +105,10 @@
     };
 
     // 画面を初期化
-    resetCanvas() {
+    resetCanvas = () => {
       this.ctx.fillStyle = View.colors.backGround;
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    }
+    };
 
     // 丸の描画
     drawCircle = (centerX, centerY, radius, color) => {
