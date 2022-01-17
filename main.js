@@ -86,7 +86,7 @@
       this.size = this.container.clientWidth;
 
       // オブジェクトの生成
-      const abs_parts_size = objMap(objMap(this.setAbsoluteSize))(
+      const abs_parts_size = objMap(objMap(View.setAbsoluteSize(this.size)))(
         View.rel_parts_size
       );
       this.rope = new Rope(abs_parts_size.rope, View.colors.item);
@@ -99,9 +99,9 @@
     }
 
     // 相対的なサイズを絶対的なサイズに
-    setAbsoluteSize = (size) => {
+    static setAbsoluteSize = (viewSize) => (size) => {
       const DEFAULT_VIEW_SIZE = 500;
-      return (this.size / DEFAULT_VIEW_SIZE) * size;
+      return (viewSize / DEFAULT_VIEW_SIZE) * size;
     };
 
     // 画面を初期化
