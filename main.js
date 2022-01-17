@@ -13,9 +13,9 @@
     }
 
     // 糸の角度を進行状況progから求める関数
-    angle(prog) {
+    angle = (prog) => {
       return this.angle_0 * Math.cos(prog);
-    }
+    };
   }
 
   // 振り子の運動の中心のピン
@@ -36,14 +36,14 @@
     }
 
     // 進行状況progを使って糸の角度と糸の長さから玉のx座標を取得
-    x(prog, rope, pin) {
+    x = (prog, rope, pin) => {
       return pin.x + rope.length * Math.sin(rope.angle(prog));
-    }
+    };
 
     // 進行状況progを使って糸の角度と糸の長さから玉のy座標を取得
-    y(prog, rope, pin) {
+    y = (prog, rope, pin) => {
       return pin.y + rope.length * Math.cos(rope.angle(prog));
-    }
+    };
   }
 
   // 描画されるもの全体のクラス
